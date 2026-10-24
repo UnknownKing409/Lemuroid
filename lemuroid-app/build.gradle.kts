@@ -85,9 +85,9 @@ android {
 
         maybeCreate("release").apply {
             storeFile = file("$rootDir/release.jks")
-            keyAlias = "lemuroid"
-            storePassword = "lemuroid"
-            keyPassword = "lemuroid"
+            keyAlias = "android"
+            storePassword = "android"
+            keyPassword = "android"
         }
     }
 
