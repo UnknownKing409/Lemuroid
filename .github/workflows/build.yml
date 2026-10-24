@@ -6,10 +6,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
 
     steps:
-
       - uses: actions/checkout@v5
         with:
           submodules: recursive
@@ -24,12 +23,13 @@ jobs:
       - name: Grant execute permission
         run: chmod +x gradlew
 
-      - name: Build
-        run: ./gradlew assembleRelease -Pandroid.injected.build.abi=arm64-v8a -Darch=arm64
+      - name: Build APK
+        run: ./gradlew :lemuroid-app:assembleFreeRelease -Pandroid.injected.build.abi=arm64-v8a -Darch=arm64 --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v7
         with:
-          name: app-release
-          path: '**/*.apk'
+          name: lemuroid-arm64-release
+          path: '**/*arm64-v8a*.apk'
+          if-no-files-found: warn
           archive: false
