@@ -24,7 +24,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build APK
-        run: ./gradlew :lemuroid-app:assembleFreeRelease -Pandroid.injected.build.abi=arm64-v8a
+        run: ./gradlew :lemuroid-app:assembleFreeBundleRelease -Pandroid.injected.build.abi=arm64-v8a
         
       - name: Upload APK
         uses: actions/upload-artifact@v7
