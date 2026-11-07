@@ -31,5 +31,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: app-release
-          path: 'lemuroid-app/build/outputs/apk/freeDynamic/release/lemuroid-app-free-dynamic-release.apk'
+          path: lemuroid-app/build/outputs/apk/freeDynamic/release/lemuroid-app-free-dynamic-release
           archive: false
